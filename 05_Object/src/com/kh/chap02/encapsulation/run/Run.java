@@ -1,5 +1,7 @@
 package com.kh.chap02.encapsulation.run;
 
+import java.util.Scanner;
+
 import com.kh.chap02.encapsulation.model.vo.AutosellingMachine;
 
 public class Run {
@@ -42,6 +44,22 @@ public class Run {
 		
 		asm.setPrice(1500);
 		//argument,인자값,인수
+		System.out.println(asm);
+		asm.setName("삼양라면");
+		asm.setAmount(5);
+		asm.setPriceAndAmount(1000,5);
+		//함수 == BuiltInFunction
+		//자바의클래스 == 자료형
+		//메소드 == 특정 자료형만 수행할수있는 기능
+		String name = asm.getName();
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println(name);
+		
+		int amount = asm.getAmount();
+		System.out.println(amount);
+		int price = asm.getPrice();
+		System.out.println(price);
 	}
 
 }

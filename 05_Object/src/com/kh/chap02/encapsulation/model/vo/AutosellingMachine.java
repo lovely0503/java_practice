@@ -55,10 +55,11 @@ public class AutosellingMachine { //단한개의 제품을 파는 자판기
 	 * 1.setter메소드는 외부에서 접근이 가능하기 때문에 접근제한자 public을 이용
 	 * 2.set필드명으로 식별자를 작성하며 낙타봉표기법(cameCase)를 꼭 지키도록한다
 	 */
-	//price필드 값을 set할수 있는 메소드 구현
+	// 하나의 메소드는 하나의 기능만을 수행해야한다.
+	// price필드 값을 set할수 있는 메소드 구현
 	public void setPrice(int price) {
-				//parameter,매개변수
-				//매개변수는 메소드 호출시 초기화가 강제됨
+		//parameter,매개변수
+		//매개변수는 메소드 호출시 초기화가 강제됨
 		
 		System.out.println(price);
 		//scope안에서는 해당 영역안에 있는 지역변수가 식별자 우선권을 가진다
@@ -68,6 +69,58 @@ public class AutosellingMachine { //단한개의 제품을 파는 자판기
 		this.price = price;
 		
 		}
+	//name 필드를 기록 및 수정 할수 있는 메소드
+	public void setName(String name) {
+			this.name = name;
+	}
 	
+	//amount 필드를 기록 및 수정할수있는 메소드
+	public void setAmount(int amount) {
+			this.amount = amount;
+	}
 	
+	//*관례위반 : 두개이상의 필드값을 변경하는 메소드이름에 set이 붙으면 안됨
+	public void setPriceAndAmount(int price, int amount) {
+		this.price = price;
+		this.amount = amount;
+	}
+	
+	//데이터를 반환해주는 기능의 메소드 : getter() --> 꼭있어야함
+	/*
+	 * 	규칙!!
+	 * 1.getter()는 접근제한자 public을 사용한다.
+	 * 2.get필드명으로 짓되, 낙타봉표기법(camelCase)를 사용한다
+	 * 3.VO패키지안에 존재하는 클래스라면 getter는 무조건 꼭 다 만들어야됨!
+	 * 	
+	 */
+	//메소드를 호출한 곳으로 name필드 값을 돌려주고 싶음
+	public String getName() {
+		return name;
+		
+	}
+	//개수를 반환해주는 메소드
+	public int getAmount() {
+		return amount;
+	}
+	
+	public int getPrice() {
+		return price;
+	}
+	//필드들의 접근제한자를 private으로 변경한뒤
+	//각각의 필드들에 대한 getter() / setter()를 구현하면
+	//캡슐화가 끝났다!
+	/*
+	 * 1. 값을 숨긴다 => 필드의 접근제한자를 private으로 선언
+	 * 
+	 * 2.메소드를 통해 필드에 접근할수 있게 만든다 => getter() / setter() 구현
+	 * 
+	 * 데이터를 숨김 => 객체간의 결합도가 낮아짐 => 책임을 분리시킴
+	 * 
+	 */
+	private String color;
+	public String info() {
+		String info = "자판기 = [제품명 : " + name + ",가격 : "+ price + ",재고 : "
+				+amount+"색상 : "+ color + "]";
+		return info;
+	}
 	}

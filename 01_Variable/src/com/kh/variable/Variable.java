@@ -2,6 +2,11 @@ package com.kh.variable;
 
 public class Variable {
 	
+	/*
+	 * git add .
+	 * git commit -m"뭐했는지"
+	 * git push origin main
+	 */
 	// 변수 : Memory(RAM)에 값을 저장하기 위한 공간
 	
 	//변수 그냥 한번 써보기
@@ -218,5 +223,15 @@ public class Variable {
 		//%c,%C : (단일)문자 타입
 		//%s,%S : 문자열
 		System.out.printf("doubleNum 값 : %.2f",doubleNumber);
+		System.out.println("============================");
+		
+		//상수 => 프로그래밍 언어
+		//=> 값을 변경하지 않을 변수 공간
+		int startYear = 1998;
+		startYear = 2026;
+		
+		final int START_YEAR = 1998;
+		//START_YEAR = 2026;
+		
 	}
 }
