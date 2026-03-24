@@ -23,6 +23,28 @@ public class Run {
 		//2. 여러자료형에 각각 여러개의 값을 보관가능 + 기능
 		
 		
+		//가격,결제수단,상점명,날짜
+		System.out.println("가격이 얼마 인가요??");
+		int price = sc.nextInt();
+		sc.nextLine();
+		r.setPrice(price);
+		//메소드 호출부에서 메소드를 호출하면서
+		//넘길수 있는 것은 오로지 값뿐
+		System.out.println("결제수단은 무엇인가요?");
+		String payment = sc.nextLine();
+		r.setPayment(payment);
+		
+		System.out.println("상점명은 무엇인가요?");
+		String storeName = sc.nextLine();
+		r.setStoreName(storeName);
+		
+		System.out.println("날짜는 언제 인가요?");
+		String date = sc.nextLine();
+		r.setDate(date);
+		
+		System.out.println("============================");
+		String info = r.info();
+		System.out.println(info);
 		
 		sc.close();
 	}
