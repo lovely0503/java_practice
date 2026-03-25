@@ -1,0 +1,21 @@
+package com.kh.vips.model.vo;
+
+public class Chef {
+	private String name;
+
+	public Chef(String name) {
+		this.name = name;
+	}
+
+	public void Cooking() {
+		System.out.println("요리시작");
+	}
+
+	public void breakTime() {
+		System.out.println("쉬는시간");
+	}
+	public String getName() {
+		return name;
+	}
+	
+}
