@@ -4,5 +4,7 @@
     <fullyQualifiedTypeName name="com.kh.variable.InputKeyBoard"/>
     <fullyQualifiedTypeName name="com.kh.chap03.escape.EscapeBreak"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="com.kh.chap03.model.vo.SaladChef"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
 </qualifiedTypeNameHistroy>
