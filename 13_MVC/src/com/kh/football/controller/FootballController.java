@@ -44,4 +44,7 @@ public class FootballController {
 	public String deleteFootballPlayer(int id) {
 		return fs.deleteFootballPlayer(id);
 	}
+	public List<FootballPlayer> findByKeyword(String keyword) {
+			return fs.findByKeyword(keyword);
+	}
 }

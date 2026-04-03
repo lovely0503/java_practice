@@ -130,8 +130,24 @@ public class FootballService {
 			return false;
 			
 		}
+			
+			public void findFootballPlayer(String keyword){
+				
+			}
 		
-	
+	public List<FootballPlayer> findByKeyword(String keyword) {
+		
+		
+		//boolean result = list.get(0).getName().contains(keyword);
+		List<FootballPlayer> searched = new ArrayList();
+		
+		for(FootballPlayer player : list) {
+			if(player.getName().contains(keyword)) {
+				searched.add(player);
+			}
+		}
+		return searched;
+	}
 	
 	
 

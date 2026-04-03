@@ -13,6 +13,7 @@ import com.kh.football.model.vo.FootballPlayer;
 public class FootballView {
 	private Scanner sc = new Scanner(System.in);
 	private FootballController fc = new FootballController();
+	private BoardView bc = new BoardView();
 
 	// 프로그램 실행 시 보여줄 화면을 출력해주는 기능
 	public void mainMenu() {
@@ -30,6 +31,7 @@ public class FootballView {
 			// 사용자가 입력한 값을 저장소에 저장
 			System.out.println("3. 축구선수 수정하기");
 			System.out.println("4. 축구선수 삭제하기");
+			System.out.println("7. 축구 이야기 게시판");
 			// 축구선수 검색하기, 축구선수 목록 파일로 저장하기
 			System.out.println("0. 프로그램 종료하기");
 			System.out.println();
@@ -52,6 +54,7 @@ public class FootballView {
 				addFootballPlayer();
 				break;
 			case 3 :updateFootballPlayer(); break;
+			case 4 : deleteFootballPlayer();break;
 			case 0:
 				System.out.println("프로그램을 종료합니다");
 				sc.close();
@@ -267,7 +270,25 @@ public class FootballView {
 			System.out.println("id를 찾을수없습니다");
 		}
 	}
-	
+	private void findFootballPlayer(){
+		String keyword = sc.nextLine();
+		List<FootballPlayer> players = fc.findByKeyword(keyword);
+		if(players.isEmpty()) {
+			System.out.println("===========================");
+			System.out.println("검색결과가 존재하지 않습니다");
+			System.out.println("===========================");
+			
+		}else {
+			System.out.println();
+			System.out.println(keyword +"검색 결과 입니다");
+			for(FootballPlayer player : players) {
+				System.out.println("이름 : "+player.getName()
+									+ ", 포지션 : "+player.getPosition()
+									+ ", 등번호 : "+player.getBackNumber());
+			}
+			System.out.println();
+		}
+	}
 	
 	
 }
